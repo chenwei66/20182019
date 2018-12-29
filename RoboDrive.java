@@ -123,6 +123,22 @@ public class RoboDrive extends LinearOpMode {
 
             robot.longMotor.setPower(0.0);
 
+            // >>> right_trigger do the same thing as button B, 12/28
+            if (gamepad1.right_trigger > 0) {
+                if(robot.longMotor.getCurrentPosition() > 420) {
+                    robot.longMotor.setPower(-1.0);
+                }
+
+                if(robot.longMotor.getCurrentPosition() < 420) {
+                    robot.longMotor.setPower(-0.9);
+                }
+                telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
+                telemetry.update();
+            }
+
+            robot.longMotor.setPower(0.0);
+            // <<< right_trigger do the same thing as button B, 12/28
+
             //Intake
             if(gamepad1.left_bumper) {
                 robot.leftIn.setPosition(1.0);
@@ -228,16 +244,16 @@ public class RoboDrive extends LinearOpMode {
 
                 robot.vertMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
                 robot.vertMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-                robot.vertMotor.setTargetPosition(-2000);
+                robot.vertMotor.setTargetPosition(-1980);  // Changed from -2000 to -1980. 12/28
                 robot.vertMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 robot.vertMotor.setPower(1);
                 while (robot.vertMotor.isBusy() ) {
                     telemetry.addData("Path1",  "Running to " + robot.vertMotor.getCurrentPosition());
                     telemetry.update();
                 }
-                robot.dumpyBoi.setPosition(0.18);
+                robot.dumpyBoi.setPosition(0.10);  // Changed from 0.18 to 0.10. 12/28
 
-                sleep(1500);
+                sleep(2000);  // Changed from 1500 to 2000. 12/28
 
                 robot.dumpyBoi.setPosition(0.87);
                 sleep(500);
