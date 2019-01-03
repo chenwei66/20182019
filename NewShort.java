@@ -342,7 +342,7 @@ public class NewShort extends LinearOpMode {
                        driveByEncoder(0.3, 5.0, 0.0);
                        driveByEncoder(0.3,0.0,1.0);
 
-                       driveByEncoder(0.5, -11, -11);
+                       driveByEncoder(0.5, -13, -13);
 
                        robot.markyBoi.setPosition(0.08);
 

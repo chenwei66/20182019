@@ -251,10 +251,9 @@ public class RoboDrive extends LinearOpMode {
                     telemetry.addData("Path1",  "Running to " + robot.vertMotor.getCurrentPosition());
                     telemetry.update();
                 }
-                robot.dumpyBoi.setPosition(0.10);  // Changed from 0.18 to 0.10. 12/28
+                robot.dumpyBoi.setPosition(0.14);  // Changed from 0.18 to 0.10. 12/28
 
                 sleep(2000);  // Changed from 1500 to 2000. 12/28
-
                 robot.dumpyBoi.setPosition(0.87);
                 sleep(500);
 
