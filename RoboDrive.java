@@ -47,7 +47,7 @@ public class RoboDrive extends LinearOpMode {
     static final double     WHEEL_DIAMETER_INCHES   = 4.0 ;     // For figuring circumference
     static final double     COUNTS_PER_INCH          = (COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) / (WHEEL_DIAMETER_INCHES * 3.1415);
 
-    float                   SPEED_RATE           = 0.5f;       // Driving speed rate
+    float                   SPEED_RATE           = 0.8f;       // Driving speed rate
     double                  curPosition;
 
     /* Declare Global Variables. */
@@ -105,8 +105,9 @@ public class RoboDrive extends LinearOpMode {
                 telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
                 telemetry.update();
             }
-
-            robot.longMotor.setPower(0.0);
+            else {
+            	robot.longMotor.setPower(0.0);
+            }
 
             //Move In
             if (gamepad1.b) {
@@ -120,8 +121,9 @@ public class RoboDrive extends LinearOpMode {
                 telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
                 telemetry.update();
             }
-
-            robot.longMotor.setPower(0.0);
+            else { 
+            	robot.longMotor.setPower(0.0);
+            }
 
             // >>> right_trigger do the same thing as button B, 12/28
             if (gamepad1.right_trigger > 0) {
@@ -237,6 +239,14 @@ public class RoboDrive extends LinearOpMode {
 
             if (gamepad1.left_trigger > 0) {
 
+//
+                while(robot.longMotor.getCurrentPosition() > 10) {
+                    robot.longMotor.setPower(-0.9);
+                }
+				robot.longMotor.setPower(0.0);
+//				sleep(500);
+//				
+
                 robot.pushyBoi.setPosition(1);
                 sleep(500);
                 robot.pushyBoi.setPosition(0);
@@ -253,7 +263,7 @@ public class RoboDrive extends LinearOpMode {
                 }
                 robot.dumpyBoi.setPosition(0.14);  // Changed from 0.18 to 0.10. 12/28
 
-                sleep(2000);  // Changed from 1500 to 2000. 12/28
+                sleep(1500);  // Changed from 1500 to 2000. 12/28
                 robot.dumpyBoi.setPosition(0.87);
                 sleep(500);
 
