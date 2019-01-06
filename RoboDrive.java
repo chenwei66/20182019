@@ -98,19 +98,14 @@ public class RoboDrive extends LinearOpMode {
              ********************************************/
 
             //Move Out
-            if(gamepad1.a){
+            if(gamepad1.a){   // extend the long arm
                 robot.longMotor.setPower(1.0);
 
 
                 telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
                 telemetry.update();
             }
-            else {
-                robot.longMotor.setPower(0.0);
-            }
-
-            //Move In
-            if (gamepad1.b) {
+            else if (gamepad1.b || (gamepad1.right_trigger > 0)) {  // pull back the long arm
                 if(robot.longMotor.getCurrentPosition() > 420) {
                     robot.longMotor.setPower(-1.0);
                 }
@@ -124,23 +119,6 @@ public class RoboDrive extends LinearOpMode {
             else { 
             	robot.longMotor.setPower(0.0);
             }
-
-            // >>> right_trigger do the same thing as button B, 12/28
-            if (gamepad1.right_trigger > 0) {
-                if(robot.longMotor.getCurrentPosition() > 420) {
-                    robot.longMotor.setPower(-1.0);
-                }
-
-                if(robot.longMotor.getCurrentPosition() < 420) {
-                    robot.longMotor.setPower(-0.9);
-                }
-                telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
-                telemetry.update();
-            }
-            else {
-				robot.longMotor.setPower(0.0);
-            }
-            // <<< right_trigger do the same thing as button B, 12/28
 
             //Intake
             if(gamepad1.left_bumper) {
@@ -208,15 +186,9 @@ public class RoboDrive extends LinearOpMode {
 
             if(gamepad1.x) {
                 robot.stabbyBoi.setPower(-0.4);
-
             }
-            else {
-				robot.stabbyBoi.setPower(0.0);
-            }
-
-            if(gamepad1.y) {
+            else if(gamepad1.y) {
                 robot.stabbyBoi.setPower(0.4);
-
             }
             else {
 				robot.stabbyBoi.setPower(0.0);
@@ -269,11 +241,9 @@ public class RoboDrive extends LinearOpMode {
                // <<< 01/05/2019
 
                 robot.pushyBoi.setPosition(1);
-			   // >>> 01/05/2019 don't need this delay, reset the pushyBoi position below
-			   // Will save 1 second here.
-               // sleep(500);
-               // robot.pushyBoi.setPosition(0);
-               // sleep(500);
+                sleep(500);
+                robot.pushyBoi.setPosition(0);
+                sleep(500);
 
                 robot.vertMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
                 robot.vertMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -284,24 +254,16 @@ public class RoboDrive extends LinearOpMode {
                     telemetry.addData("Path1",  "Running to " + robot.vertMotor.getCurrentPosition());
                     telemetry.update();
                 }
-                robot.dumpyBoi.setPosition(0.14);  // Changed from 0.18 to 0.10. 12/28
-
-				// >>> 01/05/2019 reset the pushyBoi position here.
-                robot.pushyBoi.setPosition(0);
-				
+                robot.dumpyBoi.setPosition(0.14);  // Changed from 0.10 to 0.14. 1/1/19
                 sleep(1500);
-                robot.dumpyBoi.setPosition(0.87);
 				
+                robot.dumpyBoi.setPosition(0.87);
                 sleep(500);
 
                 robot.vertMotor.setTargetPosition(0);
                 robot.vertMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 robot.vertMotor.setPower(1);
             }
-//
-//            if (gamepad1.right_trigger > 0) {
-//
-//            }
 
 
             /*********
