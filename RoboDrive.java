@@ -106,7 +106,7 @@ public class RoboDrive extends LinearOpMode {
                 telemetry.update();
             }
             else {
-            	robot.longMotor.setPower(0.0);
+                robot.longMotor.setPower(0.0);
             }
 
             //Move In
@@ -137,8 +137,9 @@ public class RoboDrive extends LinearOpMode {
                 telemetry.addData("Status", "Position Reading: " + robot.longMotor.getCurrentPosition());
                 telemetry.update();
             }
-
-            robot.longMotor.setPower(0.0);
+            else {
+				robot.longMotor.setPower(0.0);
+            }
             // <<< right_trigger do the same thing as button B, 12/28
 
             //Intake
@@ -186,6 +187,9 @@ public class RoboDrive extends LinearOpMode {
             robot.vertMotor.setPower(0);
 */
 
+/**********************************************************
+// Modified the gamepad1.x and gamepad1.y as for loop below
+
             while(gamepad1.x) {
                 robot.stabbyBoi.setPower(-0.4);
 
@@ -199,7 +203,24 @@ public class RoboDrive extends LinearOpMode {
             }
 
             robot.stabbyBoi.setPower(0.0);
+            
+*************************************************************/
 
+            if(gamepad1.x) {
+                robot.stabbyBoi.setPower(-0.4);
+
+            }
+            else {
+				robot.stabbyBoi.setPower(0.0);
+            }
+
+            if(gamepad1.y) {
+                robot.stabbyBoi.setPower(0.4);
+
+            }
+            else {
+				robot.stabbyBoi.setPower(0.0);
+            }
 
             //robot.stabbyBoi.setPosition(0.55);
 
@@ -239,18 +260,20 @@ public class RoboDrive extends LinearOpMode {
 
             if (gamepad1.left_trigger > 0) {
 
-//
+               // >>> 01/05/2019 Check the current long arm position, if it did not pull back, pull back it.
+               // During the competition, you don't need to pull back the long arm all the way, It will pull back by this code.
                 while(robot.longMotor.getCurrentPosition() > 10) {
                     robot.longMotor.setPower(-0.9);
                 }
 				robot.longMotor.setPower(0.0);
-//				sleep(500);
-//				
+               // <<< 01/05/2019
 
                 robot.pushyBoi.setPosition(1);
-                sleep(500);
-                robot.pushyBoi.setPosition(0);
-                sleep(500);
+			   // >>> 01/05/2019 don't need this delay, reset the pushyBoi position below
+			   // Will save 1 second here.
+               // sleep(500);
+               // robot.pushyBoi.setPosition(0);
+               // sleep(500);
 
                 robot.vertMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
                 robot.vertMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -263,8 +286,12 @@ public class RoboDrive extends LinearOpMode {
                 }
                 robot.dumpyBoi.setPosition(0.14);  // Changed from 0.18 to 0.10. 12/28
 
-                sleep(1500);  // Changed from 1500 to 2000. 12/28
+				// >>> 01/05/2019 reset the pushyBoi position here.
+                robot.pushyBoi.setPosition(0);
+				
+                sleep(1500);
                 robot.dumpyBoi.setPosition(0.87);
+				
                 sleep(500);
 
                 robot.vertMotor.setTargetPosition(0);
