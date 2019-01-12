@@ -291,7 +291,7 @@ public class OldShort extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.1,-0.1);
-                    driveByEncoder(0.5, -6.0, -6.0);
+                    driveByEncoder(0.5, -8.0, -8.0);
                     robot.markyBoi.setPosition(0.08);
 
                     break;
@@ -330,9 +330,9 @@ public class OldShort extends LinearOpMode {
 
                 case "RIGHT":
                     driveByEncoder(0.5, 1.0,1.0);
-                    driveByEncoder(0.5, 0.0,9.2);
+                    driveByEncoder(0.5, 0.0,8.2);
                     driveByEncoder(0.5, 9.0,  9.0);
-                    driveByEncoder(0.5, 3.0, -3.0);
+                    driveByEncoder(0.5, 4.0, -4.0);
 
                     driveByEncoder(0.5, 0.0, 7.0);
                     driveByEncoder(0.5, 1.5, 0);
@@ -348,7 +348,7 @@ public class OldShort extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.2,-0.2);
-                    driveByEncoder(0.5, -7, -7);
+                    driveByEncoder(0.5, -10, -10);
 
                     robot.markyBoi.setPosition(0.08);
 

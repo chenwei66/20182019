@@ -138,8 +138,8 @@ public class NewShort extends LinearOpMode {
         // Make sure to add "waitForTick" statement breaks between each component
 
 
-    //    telemetry.addData("Status: ", "Initialized v4.0b - " + myDateFormat.format(today));
-    //    telemetry.update();
+//        telemetry.addData("Status: ", "Initialized v4.0c - " + myDateFormat.format(today));
+//        telemetry.update();
 
 
         //Scans blocks to determine GOLD location
@@ -193,6 +193,7 @@ public class NewShort extends LinearOpMode {
 
             if (updatedRecognitions1 != null) {
                 telemetry.addData("# Object Detected", updatedRecognitions1.size());
+                telemetry.addData("Status: ", "Initialized v4.0c - " + myDateFormat.format(today));
 
                 if (updatedRecognitions1.size() == 2) {
 
@@ -273,7 +274,7 @@ public class NewShort extends LinearOpMode {
                        System.out.println("Kyle's Program");
                        telemetry.addData("Kyle's Program --- ", "leon ur dumb");
 
-                       driveByEncoder(0.5, 6.2,0);
+                       driveByEncoder(0.5, 9.2,0);  // old left = 6.2
                        driveByEncoder(0.5, 9.0,  9.0);
                        driveByEncoder(0.5, -4.0, 4.0);
 
@@ -290,7 +291,7 @@ public class NewShort extends LinearOpMode {
                        //Drive to crater
                        driveByEncoder(0.3, 4.0, 0.0);
                        driveByEncoder(0.3,0.0,1.0);
-                       driveByEncoder(0.5, -8.0, -8.0);
+                       driveByEncoder(0.5, -10.0, -10.0);
                        robot.markyBoi.setPosition(0.08);
 
                        break;
