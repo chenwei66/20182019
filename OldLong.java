@@ -274,7 +274,7 @@ public class OldLong extends LinearOpMode {
                 case "LEFT":
 
 
-                    driveByEncoder(0.5, 6.2, 0);
+                    driveByEncoder(0.5, 8.2, 0);
                     driveByEncoder(0.5, 7.5,  7.5);
                     driveByEncoder(0.5, 0.0, 2.5);
                     driveByEncoder(0.5, 1.3,1.3);
@@ -292,8 +292,6 @@ public class OldLong extends LinearOpMode {
 
 
                 case "RIGHT":
-
-
                     driveByEncoder(0.5, 0,6.2);
                     driveByEncoder(0.5, -1.3,1.3);
                     driveByEncoder(0.5, 7.5,  7.5);

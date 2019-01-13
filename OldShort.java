@@ -270,7 +270,7 @@ public class OldShort extends LinearOpMode {
 
             switch(GoldPosition) {
                 case "LEFT":
-                    driveByEncoder(0.5, 7.2,0);
+                    driveByEncoder(0.5, 8.3,0);
                     driveByEncoder(0.5, 9.0,  9.0);
                     driveByEncoder(0.5, 3.0, -3.0);
 
@@ -330,7 +330,7 @@ public class OldShort extends LinearOpMode {
 
                 case "RIGHT":
                     driveByEncoder(0.5, 1.0,1.0);
-                    driveByEncoder(0.5, 0.0,8.2);
+                    driveByEncoder(0.5, 0.0,5.7);
                     driveByEncoder(0.5, 9.0,  9.0);
                     driveByEncoder(0.5, 4.0, -4.0);
 
