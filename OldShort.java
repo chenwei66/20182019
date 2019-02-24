@@ -291,7 +291,12 @@ public class OldShort extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.1,-0.1);
-                    driveByEncoder(0.5, -8.0, -8.0);
+                    driveByEncoder(0.5, -4.0, -4.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
+
                     robot.markyBoi.setPosition(0.08);
 
                     break;
@@ -321,7 +326,11 @@ public class OldShort extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.2,-0.2);
-                    driveByEncoder(0.5, -13.0, -13.0);
+                    driveByEncoder(0.5, -6.0, -6.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
 
                     robot.markyBoi.setPosition(0.08);
 
@@ -348,7 +357,45 @@ public class OldShort extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.2,-0.2);
-                    driveByEncoder(0.5, -10, -10);
+                    driveByEncoder(0.5, -7, -7);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
+
+                    robot.markyBoi.setPosition(0.08);
+
+                    break;
+
+                default:
+                    driveByEncoder(0.5, 1.5, 0.0);
+                    driveByEncoder(0.5, 15.0,  15.0);
+                    driveByEncoder(0.5, 3.0, -3.0);
+
+                    driveByEncoder(0.5, 0.0, 7.0);
+                    driveByEncoder(0.5, 1.5, 0);
+                    driveByEncoder(0.5, -2.0, -2.0);
+
+
+                    robot.markyBoi.setPosition(0.70);
+
+                    //Move up against the wall
+                    driveByEncoder(0.2, 0, 3.0);
+                    //Move away from wall
+                    driveByEncoder(0.3,1.5,0);
+                    driveByEncoder(0.3,-0.1,0.0);
+
+                    driveByEncoder(0.5, -15.0, -15.0);
+
+                    //Drive to crater
+                    driveByEncoder(0.3, 0, 5.0);
+                    driveByEncoder(0.3,1.0,0);
+                    driveByEncoder(0.3,0.2,-0.2);
+                    driveByEncoder(0.5, -6.0, -6.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
 
                     robot.markyBoi.setPosition(0.08);
 

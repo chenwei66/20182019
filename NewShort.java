@@ -274,7 +274,7 @@ public class NewShort extends LinearOpMode {
                        System.out.println("Kyle's Program");
                        telemetry.addData("Kyle's Program --- ", "leon ur dumb");
 
-                       driveByEncoder(0.5, 9.2,0);  // old left = 6.2
+                       driveByEncoder(0.5, 7.2,0);  // old left = 6.2
                        driveByEncoder(0.5, 9.0,  9.0);
                        driveByEncoder(0.5, -4.0, 4.0);
 
@@ -283,6 +283,7 @@ public class NewShort extends LinearOpMode {
                        driveByEncoder(0.5, 6.0,6.0);
 
                        robot.markyBoi.setPosition(0.70);
+                       sleep(500);
 
 
 
@@ -291,7 +292,12 @@ public class NewShort extends LinearOpMode {
                        //Drive to crater
                        driveByEncoder(0.3, 4.0, 0.0);
                        driveByEncoder(0.3,0.0,1.0);
-                       driveByEncoder(0.5, -10.0, -10.0);
+                       driveByEncoder(0.5, -4.0, -4.0);
+
+                       robot.longMotor.setTargetPosition(2300);
+                       robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                       robot.longMotor.setPower(1);
+
                        robot.markyBoi.setPosition(0.08);
 
                        break;
@@ -317,8 +323,17 @@ public class NewShort extends LinearOpMode {
 
                        driveByEncoder(0.5, -15.0, -15.0);
 
+                       //Move up against the wall
+                       driveByEncoder(0.2, 3.0, 0);
+                       //Move away from wall
+                       driveByEncoder(0.3,0,1.5);
+                       driveByEncoder(0.3,-0.2,0.2);
 
-                       driveByEncoder(0.5, -10.0, -10.0);
+                       driveByEncoder(0.5, -6.0, -6.0);
+
+                       robot.longMotor.setTargetPosition(2300);
+                       robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                       robot.longMotor.setPower(1);
 
                        robot.markyBoi.setPosition(0.08);
 
@@ -327,7 +342,7 @@ public class NewShort extends LinearOpMode {
 
                    case "RIGHT":
                        driveByEncoder(0.5, 0.0,7.2);
-                       driveByEncoder(0.5, 12.0,  12.0);
+                       driveByEncoder(0.5, 11.0,  11.0);
                        driveByEncoder(0.5, -3.6, 3.6);
 
                        driveByEncoder(0.5, 18.0, 0.0);
@@ -343,11 +358,48 @@ public class NewShort extends LinearOpMode {
                        driveByEncoder(0.3, 5.0, 0.0);
                        driveByEncoder(0.3,0.0,1.0);
 
-                       driveByEncoder(0.5, -13, -13);
+                       driveByEncoder(0.5, -9, -9);
+
+                       robot.longMotor.setTargetPosition(2300);
+                       robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                       robot.longMotor.setPower(1);
 
                        robot.markyBoi.setPosition(0.08);
 
                        break;
+
+                       default:
+                           driveByEncoder(0.5, 1.0, 0.0);
+                           driveByEncoder(0.5, 15.0,  15.0);
+                           driveByEncoder(0.5, -4.0, 4.0);
+
+                           driveByEncoder(0.5, 7.0, 0.0);
+                           driveByEncoder(0.5, 0.0, 1.50);
+                           driveByEncoder(0.5, -2.0, -2.0);
+
+
+                           robot.markyBoi.setPosition(0.70);
+
+                           //Move up against the wall
+                           driveByEncoder(0.2, 3.0, 0);
+                           //Move away from wall
+                           driveByEncoder(0.3,0,1.5);
+
+
+                           driveByEncoder(0.5, -15.0, -15.0);
+
+
+                           driveByEncoder(0.5, -6.0, -6.0);
+
+                           robot.longMotor.setTargetPosition(2300);
+                           robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                           robot.longMotor.setPower(1);
+
+                           robot.markyBoi.setPosition(0.08);
+
+                           break;
+
+
 
                }
 

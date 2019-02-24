@@ -267,7 +267,8 @@ public class NewLong extends LinearOpMode {
 
             //driveByEncoder(0.5, 7.6, -7.6);
 
-            driveByEncoder(0.5, 15.2,  -15.2);
+            //Turn to face depot
+            driveByEncoder(0.5, 15.1,  -15.1);
 
             // driveByEncoder(0.5, 14.0, -14.0);
 
@@ -276,8 +277,12 @@ public class NewLong extends LinearOpMode {
             switch(GoldPosition) {
                 case "LEFT":
 
+
                     driveByEncoder(0.5, 0.0,  2.0);
-                    driveByEncoder(0.5, 16.0,  16.0);
+                    driveByEncoder(0.5, 6.0,  6.0);
+                    driveByEncoder(0.5, 0.0,  5.5);
+                    driveByEncoder(0.5, 5.5,  0.0);
+                    driveByEncoder(0.5, 10.0,  10.0);
                     driveByEncoder(0.5, 3.6,-3.6);
                     driveByEncoder(0.5, 0.0,  4.0);
                     driveByEncoder(0.5, 1.5,  0.0);
@@ -296,8 +301,12 @@ public class NewLong extends LinearOpMode {
                     //Drive to crater
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
-                    driveByEncoder(0.3,-1.6,1.6);
-                    driveByEncoder(0.5, -13.0, -13.0);
+                    driveByEncoder(0.3,0.2,-0.2);
+                    driveByEncoder(0.5, -7.0, -7.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
 
                     robot.markyBoi.setPosition(0.08);
 
@@ -329,7 +338,11 @@ public class NewLong extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.2,-0.2);
-                    driveByEncoder(0.5, -13.0, -13.0);
+                    driveByEncoder(0.5, -7.0, -7.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
 
                     robot.markyBoi.setPosition(0.08);
 
@@ -362,10 +375,49 @@ public class NewLong extends LinearOpMode {
                     driveByEncoder(0.3, 0, 5.0);
                     driveByEncoder(0.3,1.0,0);
                     driveByEncoder(0.3,0.2,-0.2);
-                    driveByEncoder(0.5, -13.0, -13.0);
+                    driveByEncoder(0.5, -7.0, -7.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
 
                     robot.markyBoi.setPosition(0.08);
 
+
+                    break;
+
+                default:
+                    //Knock off the center block
+                    driveByEncoder(0.5, 1.0,  1.0);
+                    driveByEncoder(0.5, 0.0,  7.0);
+                    driveByEncoder(0.5, 5.0,  0.0);
+                    driveByEncoder(0.5, 16.0,  16.0);
+                    driveByEncoder(0.5, 3.6,-3.6);
+                    driveByEncoder(0.5, 0.0,  4.0);
+                    driveByEncoder(0.5, 1.5,  0.0);
+                    driveByEncoder(0.5, 16.0,  16.0);
+
+                    robot.markyBoi.setPosition(0.70);
+
+                    //Move up against the wall
+                    driveByEncoder(0.2, 0, 3.0);
+                    //Move away from wall
+                    driveByEncoder(0.3,1.5,0);
+                    driveByEncoder(0.3,-0.1,0.0);
+
+                    driveByEncoder(0.5, -15.0, -15.0);
+
+                    //Drive to crater
+                    driveByEncoder(0.3, 0, 5.0);
+                    driveByEncoder(0.3,1.0,0);
+                    driveByEncoder(0.3,0.2,-0.2);
+                    driveByEncoder(0.5, -7.0, -7.0);
+
+                    robot.longMotor.setTargetPosition(2300);
+                    robot.longMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                    robot.longMotor.setPower(1);
+
+                    robot.markyBoi.setPosition(0.08);
 
                     break;
 
