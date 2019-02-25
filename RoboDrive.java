@@ -231,7 +231,7 @@ public class RoboDrive extends LinearOpMode {
             }
 
             if (gamepad1.left_trigger > 0) {
-
+                stopRobot();
                // >>> 01/05/2019 Check the current long arm position, if it did not pull back, pull back it.
                // During the competition, you don't need to pull back the long arm all the way, It will pull back by this code.
                 while(robot.longMotor.getCurrentPosition() > 10) {
